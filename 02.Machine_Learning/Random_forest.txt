@@ -1,0 +1,40 @@
+import pandas as pd 					# nạp thư viện pandas
+
+melbourne_file_path = '../input/melbourne-housing-snapshot/melb_data.csv'	# đường dẫn tệp
+melbourne_data = pd.read_csv(melbourne_file_path)				# đọc tệp CSV
+
+melbourne_data = melbourne_data.dropna(axis=0)		# Loại bỏ các gía trị thiếu (NaN) trong DataFrame. Tham số axis = 0 chỉ định hàng nào có dữ liệu thiếu sẽ bị 							loại bỏ
+
+y = melbourne_data.Price				# biến y đại diện cho mục tiêu của bài toán ( target variable) Price là target variable
+melbourne_features = ['Rooms', 'Bathroom', 'Landsize', 'BuildingArea', 'YearBuilt', 'Lattitude', 'Longtitude']	# Danh sách các đặc trưng để dự đoán giá nhà
+X = melbourne_data[melbourne_features]			# biến X đại diện cho đặc trưng, là 1 dataFrame bao gôm các cột được lieket kê trong melbourne_features
+
+from sklearn.model_selection import train_test_split	# Hàm này được sử dụng để chia dữ liệu thành tập huấn luyện và tập kiểm tra (hoặc tập validation), rất hữu 							ích để đánh giá hiệu suất của mô hình.
+
+train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=0)	# chia dữ liệu thành các tập huấn luyện và tập kiểm tra, X,y là các đặc trưng và mục tiêu được định nghĩa ở trên.
+train_X các đặc trưng cảu tập huấn luyện
+val_X các đặc trưng của tập kiểm tra
+train_y mục tiêu của tập huấn luyện
+val_y mục tiêu của tập kiểm tra
+
+random_state=0: 					#Tham số này để đảm bảo rằng kết quả chia dữ liệu sẽ giống nhau mỗi lần chạy (tái tạo được), vì việc chia 							dữ liệu được thực hiện ngẫu nhiên.
+
+from sklearn.ensemble import RandomForestRegressor	# hư viện scikit-learn được sử dụng để xây dựng mô hình học máy
+							# Random Forest là một thuật toán học máy thuộc loại hồi quy (regression) hoặc phân loại (classification), dùng để dự đoán kết quả bằng cách kết hợp nhiều cây quyết định (decision trees).
+
+from sklearn.metrics import mean_absolute_error		# Mean Absolute Error (MAE) là một phép đo để đánh giá mức độ sai lệch trung bình giữa giá trị thực tế và 							giá trị dự đoán, được tính bằng trung bình giá trị tuyệt đối của các lỗi.
+
+forest_model = RandomForestRegressor(random_state=1) 	# Khởi tạo 1 đối tượng RandomForest và lưu nó vào biến  forest_model Tham số random_state=1 được sử dụng để 							đảm bảo tính ngẫu nhiên có thể tái tạo được
+forest_model.fit(train_X, train_y)			# Huấn luyện mô hình forest_model với tập dữ liệu huấn luyện (train_X, train_y) với 
+							X chứa ['Rooms', 'Bathroom', 'Landsize', 'BuildingArea', 'YearBuilt', 'Lattitude', 'Longtitude']
+							y chứa melbourne_data.Price ( Price)
+
+melb_preds = forest_model.predict(val_X)		# Sử dụng mô hình đã huấn luyên ( forest_model) để dự đoán (predict) giá nhà cho tập dữ liệu (val_X)
+
+mean_absolute_error(val_y, melb_preds)			# Hàm mean_absolute_error(val_y, melb_preds) được sử dụng để tính lỗi trung bình tuyệt đối (MAE) giữa giá 							trị thực tế của tập kiểm tra (val_y) và giá trị dự đoán (melb_preds).
+
+
+
+
+
+	
