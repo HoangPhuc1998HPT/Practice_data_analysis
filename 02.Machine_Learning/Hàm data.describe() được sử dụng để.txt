@@ -1,0 +1,70 @@
+Hàm data.describe() được sử dụng để cung cấp thống kê mô tả của các cột số trong một DataFrame Pandas (ở đây là data). Cụ thể, hàm describe() sẽ trả về một bảng thống kê giúp bạn hiểu rõ hơn về dữ liệu của mình.
+
+Ví dụ khi bạn gọi iowa_house.describe(), kết quả trả về sẽ bao gồm các chỉ số thống kê như sau cho từng cột số:
+
+count: Số lượng giá trị không bị thiếu trong cột.
+mean: Giá trị trung bình của các giá trị trong cột.
+std: Độ lệch chuẩn của các giá trị trong cột, đo lường độ phân tán của dữ liệu.
+min: Giá trị nhỏ nhất trong cột.
+25%: Phân vị thứ nhất (quartile đầu tiên) - giá trị mà 25% dữ liệu có giá trị nhỏ hơn hoặc bằng.
+50%: Phân vị thứ hai (median - trung vị) - giá trị ở giữa tập dữ liệu.
+75%: Phân vị thứ ba - giá trị mà 75% dữ liệu có giá trị nhỏ hơn hoặc bằng.
+max: Giá trị lớn nhất trong cột.
+
+
+Phân tích ý nghĩa các variance:
+
+chọn các varianece ảnh hướng đến SalePrice:
+
+['NSSubClass'], ['
+
+BsmtCond: Đánh giá tình trạng chung của tầng hầm (tốt, trung bình, kém,...).
+BsmtExposure: Đề cập đến mức độ tiếp xúc của tầng hầm (cửa sổ, tường mở, hay không có tiếp xúc).
+BsmtFinType1: Đánh giá loại khu vực hoàn thiện trong tầng hầm (phòng ở chất lượng tốt, phòng giải trí, không hoàn thiện,...).
+BsmtFinSF1: Diện tích vuông của khu vực hoàn thiện loại 1 trong tầng hầm.
+BsmtFinType2: Đánh giá loại khu vực hoàn thiện thứ hai trong tầng hầm (nếu có).
+BsmtFinSF2: Diện tích vuông của khu vực hoàn thiện loại 2 trong tầng hầm.
+BsmtUnfSF: Diện tích vuông của khu vực tầng hầm chưa hoàn thiện.
+TotalBsmtSF: Tổng diện tích vuông của toàn bộ tầng hầm.
+Heating: Loại hệ thống sưởi (như lò sưởi sàn, sưởi ấm khí gas, lò sưởi tường,...).
+HeatingQC: Chất lượng và điều kiện của hệ thống sưởi (tuyệt vời, tốt, trung bình, kém,...).
+CentralAir: Có điều hòa trung tâm hay không (Y - Có, N - Không).
+Electrical: Hệ thống điện (ví dụ: cầu dao tiêu chuẩn, hộp cầu chì,...).
+1stFlrSF: Diện tích vuông của tầng trệt.
+2ndFlrSF: Diện tích vuông của tầng hai.
+LowQualFinSF: Diện tích vuông của khu vực hoàn thiện chất lượng thấp (tất cả các tầng).
+GrLivArea: Diện tích vuông của khu vực sinh hoạt trên mặt đất (trên cấp đất).
+BsmtFullBath: Số lượng phòng tắm đầy đủ trong tầng hầm.
+BsmtHalfBath: Số lượng phòng tắm một phần trong tầng hầm.
+FullBath: Số lượng phòng tắm đầy đủ trên mặt đất.
+HalfBath: Số lượng phòng tắm một phần trên mặt đất.
+BedroomAbvGr: Số lượng phòng ngủ trên mặt đất (không tính phòng ngủ tầng hầm).
+KitchenAbvGr: Số lượng bếp trên mặt đất.
+KitchenQual: Chất lượng của nhà bếp (tuyệt vời, tốt, trung bình,...).
+TotRmsAbvGrd: Tổng số phòng trên mặt đất (không tính phòng tắm).
+Functional: Chức năng của ngôi nhà (ví dụ: chức năng điển hình, giảm giá trị nhẹ, giảm giá trị lớn,...).
+Fireplaces: Số lượng lò sưởi.
+FireplaceQu: Chất lượng của lò sưởi (tuyệt vời, tốt, trung bình,...).
+GarageType: Vị trí của garage (gắn với nhà, tách biệt, garage tầng hầm,...).
+GarageYrBlt: Năm xây dựng garage.
+GarageFinish: Tình trạng hoàn thiện bên trong của garage (hoàn thiện, hoàn thiện thô, không hoàn thiện,...).
+GarageCars: Sức chứa xe của garage (tính theo số lượng xe).
+GarageArea: Diện tích vuông của garage.
+GarageQual: Chất lượng của garage (tuyệt vời, tốt, trung bình,...).
+GarageCond: Tình trạng của garage (tuyệt vời, tốt, trung bình,...).
+PavedDrive: Đường lái xe có được lát không (Y - Có, P - Lát một phần, N - Không).
+WoodDeckSF: Diện tích vuông của sàn gỗ.
+OpenPorchSF: Diện tích vuông của hiên mở.
+EnclosedPorch: Diện tích vuông của hiên kín.
+3SsnPorch: Diện tích vuông của hiên ba mùa (three season porch).
+ScreenPorch: Diện tích vuông của hiên có màn che.
+PoolArea: Diện tích vuông của khu vực hồ bơi.
+PoolQC: Chất lượng của hồ bơi (tuyệt vời, tốt, trung bình,...).
+Fence: Chất lượng hàng rào (hàng rào gỗ, hàng rào tối thiểu,...).
+MiscFeature: Các tính năng khác không được đề cập ở các danh mục khác (như thang máy, sân tennis,...).
+MiscVal: Giá trị của các tính năng khác.
+MoSold: Tháng bán nhà (tháng MM).
+YrSold: Năm bán nhà (năm YYYY).
+SaleType: Loại bán (ví dụ: chuyển nhượng quyền sở hữu thông thường, bán mới, tòa án, hợp đồng,...).
+SaleCondition: Tình trạng bán (bán bình thường, bán bất thường, bán giữa các thành viên gia đình,...).
+SalePrice: Giá bán nhà (đây là mục tiêu mà bạn thường sẽ dự đoán trong bài toán).

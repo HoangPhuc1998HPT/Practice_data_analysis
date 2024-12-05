@@ -1,0 +1,48 @@
+Dự báo dữ liệu thị trường thời gian thực của Jean Street.
+Predict financial market responders using real-world data.(dự đoán thị trường tài chính bằng cách sử dụng dữ liệu thực tế)
+
+Trong cuộc thi này, do Jane Street tổ chức, bạn sẽ xây dựng một mô hình sử dụng dữ liệu thực tế có nguồn gốc từ các hệ thống sản xuất, cung cấp cái nhìn thoáng qua về những thách thức hàng ngày của giao dịch thành công. Thử thách này nêu bật những khó khăn trong việc lập mô hình thị trường tài chính, bao gồm phân phối đuôi béo, chuỗi thời gian không dừng và sự thay đổi đột ngột trong hành vi thị trường.
+
+Khi tiếp cận các vấn đề mô hình hóa trong thị trường tài chính hiện đại, có nhiều lý do để tin rằng các vấn đề bạn đang cố gắng giải quyết là không thể. Ngay cả khi bạn gạt sang một bên niềm tin rằng giá của các công cụ tài chính phản ánh hợp lý tất cả thông tin có sẵn, bạn sẽ phải vật lộn với các chuỗi thời gian và phân phối có các thuộc tính mà bạn không gặp phải trong các loại vấn đề mô hình hóa khác. Phân phối có thể nổi tiếng là đuôi béo, chuỗi thời gian có thể không dừng và dữ liệu nói chung có thể không đáp ứng được nhiều giả định cơ bản mà các phương pháp thống kê rất thành công dựa vào. Thêm vào tất cả những điều này là thực tế rằng thị trường tài chính cuối cùng là một nỗ lực của con người liên quan đến một số lượng lớn các cá nhân và tổ chức liên tục thay đổi theo những tiến bộ trong công nghệ và sự thay đổi trong xã hội, đồng thời phản ứng với các vấn đề kinh tế và địa chính trị khi chúng phát sinh - và bạn có thể bắt đầu cảm nhận được những khó khăn liên quan!
+
+The competition dataset comprises a set of timeseries with 79 features and 9 responders, anonymized but representing real market data. The goal of the competition is to forecast one of these responders, i.e., responder_6, for up to six months in the future.
+
+You must submit to this competition using the provided Python evaluation API, which serves test set data one timestep by timestep. To use the API, follow the example in this notebook. (Note that this API is different from our legacy timeseries API used in past forecasting competitions.)
+
+Competition Phases and Data Updates
+
+Phù hợp với nhiệm vụ dự báo, cuộc thi sẽ diễn ra theo hai giai đoạn:
+
+Giai đoạn đào tạo mô hình với một bộ dữ liệu lịch sử thử nghiệm. Bộ dữ liệu thử nghiệm này có khoảng 4,5 triệu hàng.
+Giai đoạn dự báo với một bộ dữ liệu thử nghiệm sẽ được thu thập sau khi đóng vòng nộp bài. Bạn nên mong đợi bộ dữ liệu thử nghiệm này có kích thước tương đương với bộ dữ liệu thử nghiệm trong giai đoạn đầu tiên.
+
+
+train.parquet - The training set, contains historical data and returns. For convenience, the training set has been partitioned into ten parts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
