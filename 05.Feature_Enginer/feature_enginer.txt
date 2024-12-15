@@ -1,0 +1,4 @@
+Mutual Information (MI) dùng để đo lường thông tin mà 1 biến đầu vào (feature) cung cấp về biến đầu ra (target). MI dựa trên lý thuyết thông tin được tính toán dựa trên entropy ( độ khong chắt chắn).
+Nếu MI cao: biến đầu vào chứa nhiều thông tin về biến mục tiêu
+Nếu MI thấp : biến đầu vào không cung cấp nhiều thông tin hữu ích về biến mục tiêu
+MI(x,y) = H(x) + H(y) - H(x,y)
